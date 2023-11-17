@@ -27,7 +27,7 @@ yolo_thread.start()
 
 while 1:
     height=Tello.get_height()
-    Track.tracking(data.move(yolo.get_result),height)
+    Track.tracking(data.move(yolo.get_result()),height)
     #Tello.send_data(msg)
     
         
