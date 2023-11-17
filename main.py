@@ -1,4 +1,5 @@
 import time
+import os
 import tello
 import cv2
 import yolo_predict
@@ -6,6 +7,10 @@ import yolo_data
 import track
 import yolo_data_human
 
+path=os.path.dirname(__file__)
+path=path+''
+os.chdir(path)
+        
 Tello=tello.Tello()
 yolo=yolo_predict.Predict()
 #data=yolo_data.Move()
