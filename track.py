@@ -1,5 +1,5 @@
 import math
-
+from numba import jit
 
 class tracking:
     def __init__(self):

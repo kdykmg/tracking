@@ -1,13 +1,11 @@
 import math
-from numba import jit
 
 class Move:
     def __init__(self):
         self.before_arr=[[],[],[],[]]
         self.tracking=None
         self.tracking_scooter=[]                    
-                
-    @jit    
+                   
     def move(self,af_arr):
         if self.tracking!=None:
             for pe_ax,pe_ay,pe_ah,pe_aids in af_arr[3]:
