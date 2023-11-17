@@ -18,17 +18,17 @@ yolo=yolo_predict.Predict(Tello)
 data=yolo_data_human.Move()
 Track=track.tracking()
 
-def thread_yolo_predict():
-    yolo.predict()
-    
-yolo_thread=threading.Thread(target=thread_yolo_predict)
-yolo_thread.daemon=True
-yolo_thread.start()
-
-while 1:
+def tello_data():
     height=Tello.get_height()
     Track.tracking(data.move(yolo.get_result()),height)
     #Tello.send_data(msg)
+    
+tello_thread=threading.Thread(target=tello_data)
+tello_thread.daemon=True
+tello_thread.start()
+
+while 1:
+    yolo.predict()
     
         
 
