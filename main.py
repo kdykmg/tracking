@@ -14,11 +14,12 @@ Track=track.tracking()
 vid=Tello.video
 
 while 1:
+    height=Tello.get_height()
     total_frame=int(vid.get(cv2.CAP_PROP_FRAME_COUNT))
     vid.set(cv2.CAP_PROP_POS_FRAMES, total_frame-1)
     sucess,frame=vid.read()
     if sucess:
-        Track.tracking(data.move(yolo.predict(frame)))
+        Track.tracking(data.move(yolo.predict(frame,height)))
         #Tello.send_data(msg)
         
 
