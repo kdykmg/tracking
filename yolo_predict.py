@@ -28,5 +28,7 @@ class Predict:
                 elif num==3:
                     result_arr[3].append(line)
         cv2.imshow("Video", plot) 
+        if cv2.waitKey(1) & 0xFF == ord("q"):
+            return
         return result_arr
     
